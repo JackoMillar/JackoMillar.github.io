@@ -14,11 +14,12 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            padding-top: 3%;
             text-transform: uppercase;
             font-family: arial, sans-serif;
             letter-spacing: 3px;
 
-            border-spacing: 10px;
+            border-spacing: 5px;
             border: 1px solid #ddd;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -37,9 +38,10 @@
             margin-bottom: 20px; 
         }
         nav:before, nav:after {
-            content: "";
-            flex: 1;
-            border-bottom: 1px solid #ccc;
+            content: ""; 
+            flex: 1 1; 
+            border-bottom: 1px solid #ddd;
+            margin: 5%;
         }
         nav:before {
             margin-right: 10px;
@@ -57,8 +59,9 @@
 
         nav a:hover, .active {
             text-decoration: underline;
-            font-weight: 400;
             color: black;
+            border-bottom: 1px solid #9ba0a9;
+            padding-bottom: 3px;
         }
     </style>
 </head>
