@@ -16,6 +16,10 @@
             padding: 20px;
             text-transform: uppercase;
             font-family: arial, sans-serif;
+
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             font-size: 26px;
@@ -31,6 +35,17 @@
             margin-top: 20px;
             margin-bottom: 20px; 
         }
+        nav:before, nav:after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ccc;
+        }
+        nav:before {
+            margin-right: 10px;
+        }
+        nav:after {
+            margin-left: 10px;
+        }
         nav a {
             margin: 0 10px;
             text-decoration: none;
@@ -38,6 +53,7 @@
             font-weight: normal;
             font-size: 22px;
         }
+
         nav a:hover {
             text-decoration: underline;
             font-weight: bold;
