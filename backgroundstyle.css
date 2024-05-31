@@ -1,0 +1,118 @@
+/* Default style */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 4%;
+    padding: 20px;
+    border-spacing: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* includes the heading text and navigation bar */
+.heading {
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 3%;
+    text-transform: uppercase;
+    font-family: arial, sans-serif;
+    letter-spacing: 3px;
+}
+
+/* navigation bar styling */
+nav {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+nav:before, nav:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px solid #ddd;
+    margin: 7.5px 0px;
+}
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #9ba0a9;
+    font-weight: normal;
+    font-size: 22px;
+}
+nav a:hover, .active {
+    color: black;
+    border-bottom: 1px solid #9ba0a9;
+    padding-bottom: 3px;
+}
+
+
+/* main body of webpage after heading */
+.contents {
+    padding-top: 5%;
+    text-align: left;
+}
+
+/* font style for header text */
+h1 {
+    font-size: 26px;
+    line-height: 1.2em;
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 3%;
+} 
+
+/* font style for sub-header text */
+h2 {
+    font-size: 22px;
+    font-family: arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-weight: 400;
+    padding-bottom: 1%;
+    text-align: center;
+}
+
+/* font style for main body of text */
+h3 {
+    font-size: 20px;
+    font-family: Georgia, serif;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+.text-content {
+    font-size: 15px;
+    line-height: 1.8em;
+    font-family: Georgia, serif;
+}
+
+/* web links with interactive icons */
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+.social-links a:hover {
+    background-color: #919191;
+}
+.social-links:hover a:not(:hover) {
+    filter: grayscale(100%);
+}
