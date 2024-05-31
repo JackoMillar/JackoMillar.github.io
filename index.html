@@ -4,81 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jack Millar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    
+    <link rel="stylesheet" href="backgroundstyle.css">
     <style>
-        body {           
-            font-family: 'Times New Roman', Times, serif;
-            text-align: center;
-
-            margin: 4%;
-            padding: 20px;
-
-            border-spacing: 5px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
- 
-            
-            padding-top: 3%;
-            text-transform: uppercase;
-            font-family: arial, sans-serif;
-            letter-spacing: 3px;
-
-            
-        }
-        h1 {
-            font-size: 26px;
-            line-height: 1.2em;
-            font-weight: normal;
-            font-style: normal;
-            font-weight: 400;
-            padding-top: 3%;
-            
-        }
-        nav {
-            margin-top: 20px;
-            margin-bottom: 20px; 
-        }
-        nav:before, nav:after {
-            content: ""; 
-            flex: 1 1; 
-            border-bottom: 1px solid #ddd;
-            margin: 5%;
-        }
-        nav:before {
-            margin-right: 10px;
-        }
-        nav:after {
-            margin-left: 10px;
-        }
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #9ba0a9;
-            font-weight: normal;
-            font-size: 22px;
-        }
-
-        nav a:hover, .active {
-            color: black;
-            border-bottom: 1px solid #9ba0a9;
-            padding-bottom: 3px;
+        .image-wrapper {
+            float: left;
+            margin-right: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="body">
         <h1>Jack Millar</h1>
         <nav>
             <a href="https://jackomillar.github.io/index.html" class="active">Home</a>
-            <a href="https://jackomillar.github.io/portfolio.html" >Portfolio</a>
-            <a href="https://jackomillar.github.io/careers.html" >Past Careers</a>
+            <a href="https://jackomillar.github.io/portfolio.html">Portfolio</a>
+            <a href="https://jackomillar.github.io/careers.html">Past Careers</a>
             <a href="https://jackomillar.github.io/contact.html">Contact</a>
         </nav>
-        <p>Welcome to my homepage!</p>
+    </div>
+    <div class="contents">
+        <h2>About me!</h2>
+        <div class="image-wrapper">
+            <img src="image/profilepic.png" alt="Image of Jack" style="width:136px;height:154px;">
+        </div>
+        <div class="text-content">
+            <p>
+                Jack Millar is a dedicated software engineering student at Napier University in Edinburgh, where he's been immersed in his studies since 2022. 
+                His journey into the world of software and game development has been driven by a passion for technology and innovation. 
+                Jack has developed a strong foundation in various programming languages, including HTML, Java, C, C++, C#, and Haskell. 
+                His coursework and projects at university have given him hands-on experience with tools like Android Studio and .NET frameworks, preparing him for a future in the tech industry.
+            </p>
+            <p>
+                Since 2020, Jack has also been a Senior Team Member at Gregg’s plc. 
+                In this role, he consistently delivers exceptional customer service, 
+                ensuring that every patron has a positive experience. 
+                Jack's responsibilities include managing team members, 
+                efficiently delegating tasks, handling cash transactions, and maintaining the store’s cleanliness and organization. 
+                His ability to balance these tasks demonstrates his strong organizational and teamwork skills, which are essential in any professional setting.
+            </p>
+            <p>    
+                Outside of his academic and work commitments, Jack actively participates in the game modding community. 
+                He enjoys enhancing gameplay and creating new content for existing games, which has further sharpened his programming skills. 
+                Jack is proficient in using the Unity Engine and has a solid understanding of online gaming architecture, including server and client-side development, 
+                having spent time in and outside of class working towards projects.  
+                Jack’s problem-solving abilities, adaptability, and passion for innovation make him a valuable asset in the field of software engineering. 
+            </p>
+            
+        </div>
+    </div>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/jack-millar-a65ba2294/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/JackoMillar" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://jackomillar.github.io/contact.html" target="_blank">&#x2709;</a>
     </div>
 </body>
 </html>
