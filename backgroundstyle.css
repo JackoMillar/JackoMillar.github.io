@@ -51,6 +51,8 @@ nav a:hover, .active {
 .contents {
     padding-top: 5%;
     text-align: left;
+    transition: max-height 0.5s ease;
+    max-height: 0;
 }
 
 /* font style for header text */
