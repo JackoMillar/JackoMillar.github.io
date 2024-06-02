@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jack Millar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="backgroundstyle.css">
     <style>
         .image-wrapper {
@@ -19,16 +19,14 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             transition: all 0.3s ease;
-        }
-        .career-section {
             overflow: hidden;
         }
-        .career-section .more-text-content {
+        .more-text-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease;
         }
-        .text-content.expanded .more-text-content {
+        .expanded .more-text-content {
             max-height: 1000px; /* Large enough value to show content */
         }
         .toggle-button {
@@ -52,9 +50,9 @@
     </style>
     <script>
         function toggleContent(button) {
-            var moreContent = button.previousElementSibling;
-            moreContent.classList.toggle("expanded");
-            if (moreContent.classList.contains("expanded")) {
+            var textContent = button.parentElement;
+            textContent.classList.toggle("expanded");
+            if (textContent.classList.contains("expanded")) {
                 button.textContent = "Read less";
             } else {
                 button.textContent = "Read more";
@@ -74,27 +72,15 @@
     </div>
 
     <div class="career-section">
-        <img src="image/greggs.png" alt="Greggs image" class="image-wrapper" style="width: 200pxpx; height:160px;">
+        <img src="image/greggs.png" alt="Greggs image" class="image-wrapper" style="width: 200px; height: 160px;">
         <div class="text-content">
             <h3 class="no-wrap">Greggs Senior Team Member</h3>
             <h3 style="font-weight: 500;" class="no-wrap">(2020 - present)</h3>
-            <p style="text-align: left;">Working as a senior team member at Greggs involves leading and supporting a team in delivering excellent customer service, ensuring high standards of food quality and hygiene, managing inventory, and assisting with store operations. Responsibilities include training new staff, managing end-of-day financial procedures, handling customer queries and contributing to sales targets.
-                 The role requires strong communication skills, leadership abilities, and a good understanding of the company's products and values.</p>
+            <p style="text-align: left;">Working as a senior team member at Greggs involves leading and supporting a team in delivering excellent customer service, ensuring high standards of food quality and hygiene, managing inventory, and assisting with store operations. Responsibilities include training new staff, managing end-of-day financial procedures, handling customer queries and contributing to sales targets. The role requires strong communication skills, leadership abilities, and a good understanding of the company's products and values.</p>
             <div class="more-text-content">
-                <p style="text-align: left;">I have four years of experience in the food service industry,
-                   during which I have taken charge in a fast-paced drive-thru setting.
-                   My responsibilities have included contributing to the training of multiple new staff members, 
-                   ensuring they are well-equipped to deliver exceptional service. 
-                   I am well-liked and well-known among my colleagues and customers for my dedication and positive attitude.
-                </p>
-                <p style="text-align: left;">
-                    In addition to my regular duties, 
-                    I am always known to be available for extra shifts and have traveled to assist in the running of other local Greggs stores. 
-                    This flexibility and willingness to support the broader team demonstrate my commitment to the company's success and my passion for the role.
-                </p>
-                <p style="text-align: left;">
-                    In 2022, I was recognized as the Top Sales Performer at my store and also accounted for the highest number of transactions.
-                </p>
+                <p style="text-align: left;">I have four years of experience in the food service industry, during which I have taken charge in a fast-paced drive-thru setting. My responsibilities have included contributing to the training of multiple new staff members, ensuring they are well-equipped to deliver exceptional service. I am well-liked and well-known among my colleagues and customers for my dedication and positive attitude.</p>
+                <p style="text-align: left;">In addition to my regular duties, I am always known to be available for extra shifts and have traveled to assist in the running of other local Greggs stores. This flexibility and willingness to support the broader team demonstrate my commitment to the company's success and my passion for the role.</p>
+                <p style="text-align: left;">In 2022, I was recognized as the Top Sales Performer at my store and also accounted for the highest number of transactions.</p>
             </div>
             <button class="toggle-button" onclick="toggleContent(this)">Read more</button>
         </div>
