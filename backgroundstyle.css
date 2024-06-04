@@ -51,8 +51,7 @@ nav a:hover, .active {
 .contents {
     padding-top: 5%;
     text-align: left;
-    transition: max-height 0.5s ease;
-    
+    transition: max-height 2s ease;
 }
 
 /* font style for header text */
@@ -110,7 +109,7 @@ h3 {
     border-radius: 50%;
     text-decoration: none;
     font-size: 20px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 .social-links a:hover {
     background-color: #919191;
