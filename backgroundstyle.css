@@ -27,7 +27,9 @@ nav {
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
-    flex-direction: row;
+    justify-content: center; /* Center the nav items */
+    align-items: center;
+    gap: 20px;
 }
 nav:before, nav:after {
     content: "";
@@ -48,7 +50,6 @@ nav a:hover, .active {
     border-bottom: 1px solid #9ba0a9;
     padding-bottom: 3px;
 }
-
 
 /* main body of webpage after heading */
 .contents {
@@ -71,7 +72,7 @@ h1 {
 /* font style for sub-header text */
 h2 {
     font-size: 22px;
-    font-family: arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     font-weight: 400;
