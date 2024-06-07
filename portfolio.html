@@ -7,8 +7,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="backgroundstyle.css">
     <style>
+         .image-wrapper {
+            float: right;
+            margin-right: 15px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+        .project-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .more-text-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .expanded .more-text-content {
+            max-height: 1000px; /* Large enough value to show content */
+        }
+        .toggle-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .toggle-button:hover {
+            background-color: #555;
+        }
+        .no-wrap {
+            white-space: nowrap;
+        }
+        p {
+            text-align: left;
+        }
+        /* Tag styles */
+        .tags {
+            margin-bottom: 10px;
+        }
         
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-right: 5px;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+        }
     </style>
+     <script>
+        function toggleContent(button) {
+            var textContent = button.parentElement;
+            textContent.classList.toggle("expanded");
+            if (textContent.classList.contains("expanded")) {
+                button.textContent = "Read less";
+            } else {
+                button.textContent = "Read more";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -21,6 +87,51 @@
         </nav>
     </div>
 
+    <div class="project-section">
+
+        <div class="tags">
+            <span class="tag" style="background-color: #0056b3; color: white;">Lua</span>
+        </div>
+
+        <img src="image/Group-Project.png" alt="Warzone.com logo" class="image-wrapper" style="width: 225px; height: 120px;">
+        <div class="text-content">
+            <h3 class="no-wrap">Mod Developer</h3>
+            <p><a href="image/VirtualTourApplication.pptx" >Download Powerpoint</a></p>
+            
+            <p>Outside of school, Jack actively engaged in designing and developing various projects for the indie game Warzone.com (not to be confused with COD: Warzone). Over two years, he released 15 mods to the public, each contributing to his proficiency in Lua and laying a strong foundation for future endeavors.</p>
+            <div class="more-text-content">
+                <p>In addition to his role as a mod developer, Jack serves as the Main Moderator for the game's Modding Discord Server. Well-regarded within the community, he is frequently available to support and mentor newcomers in the modding space.</p>
+            </div>
+            <button class="toggle-button" onclick="toggleContent(this)">Read more</button>
+        </div>
+    </div>
+
+    <div class="project-section">
+        
+    </div>
+
+    <div class="project-section">
+       
+    </div>
+
+    <div class="project-section">
+
+        <div class="tags">
+            <span class="tag" style="background-color: #0056b3; color: white;">Lua</span>
+        </div>
+
+        <img src="image/warzonelogo.png" alt="Warzone.com logo" class="image-wrapper" style="width: 225px; height: 120px;">
+        <div class="text-content">
+            <h3 class="no-wrap">Mod Developer</h3>
+            <p><a href="https://github.com/JackoMillar/Warzone-Lua" >Repository</a></p>
+            
+            <p>Outside of school, Jack actively engaged in designing and developing various projects for the indie game Warzone.com (not to be confused with COD: Warzone). Over two years, he released 15 mods to the public, each contributing to his proficiency in Lua and laying a strong foundation for future endeavors.</p>
+            <div class="more-text-content">
+                <p>In addition to his role as a mod developer, Jack serves as the Main Moderator for the game's Modding Discord Server. Well-regarded within the community, he is frequently available to support and mentor newcomers in the modding space.</p>
+            </div>
+            <button class="toggle-button" onclick="toggleContent(this)">Read more</button>
+        </div>
+    </div>
 
     <div class="social-links">
         <a href="https://www.linkedin.com/in/jack-millar-a65ba2294/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
