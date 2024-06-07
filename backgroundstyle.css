@@ -18,6 +18,7 @@ body {
     text-transform: uppercase;
     font-family: arial, sans-serif;
     letter-spacing: 3px;
+    
 }
 
 /* navigation bar styling */
@@ -36,6 +37,7 @@ nav:before, nav:after {
 nav a {
     margin: 0 10px;
     text-decoration: none;
+    letter-spacing: 1px;
     color: #9ba0a9;
     font-weight: normal;
     font-size: 22px;
@@ -52,6 +54,7 @@ nav a:hover, .active {
     padding-top: 5%;
     text-align: left;
     transition: max-height 2s ease;
+    letter-spacing: 1px;
 }
 
 /* font style for header text */
@@ -61,6 +64,7 @@ h1 {
     font-style: normal;
     font-weight: 400;
     padding-top: 3%;
+    letter-spacing: 1px;
 } 
 
 /* font style for sub-header text */
@@ -72,6 +76,7 @@ h2 {
     font-weight: 400;
     padding-bottom: 1%;
     text-align: center;
+    letter-spacing: 1px;
 }
 
 /* font style for main body of text */
@@ -82,11 +87,13 @@ h3 {
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 5px;
+    letter-spacing: 1px;
 }
 .text-content {
     font-size: 15px;
     line-height: 1.8em;
     font-family: Georgia, serif;
+    letter-spacing: 1px;
 }
 
 /* web links with interactive icons */
