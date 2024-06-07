@@ -14,9 +14,10 @@ body {
 .heading {
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto; /* Center the heading */
     padding-top: 3%;
     text-transform: uppercase;
-    font-family: arial, sans-serif;
+    font-family: Arial, sans-serif;
     letter-spacing: 3px;
     text-align: center;
 }
