@@ -1,0 +1,73 @@
+.all {
+    background-color: black;
+    color:#ffffff;
+}
+
+.html {
+    background-color: #8B0000;
+    color: #ffffff;
+}
+
+.css {
+    background-color: #00FF00;
+    color: black;
+}
+
+.javascript {
+    background-color: #FAC286;
+    color: black;
+}
+
+.java {
+    background-color: #5382a1;
+    color: #ffffff;
+}
+
+.mysql {
+    background-color: #F29111;
+    color: #ffffff;
+}
+
+.dockerfile {
+    background-color: #384d54;
+    color: #ffffff;
+}
+
+.collaboration {
+    background-color: #91d897;
+    color: black;
+}
+
+.lua {
+    background-color: #0056b3;
+    color: white;
+}
+
+.container {
+    overflow: hidden;
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border:  black;
+    outline: none;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  
+  /* Add a light grey background on mouse-over */
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Add a dark background to the active button */
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+  

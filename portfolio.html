@@ -6,8 +6,9 @@
     <title>Jack Millar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="backgroundstyle.css">
+    <link rel="stylesheet" href="tags.css">
     <style>
-         .image-wrapper {
+        .image-wrapper {
             float: right;
             margin-right: 15px;
             margin-bottom: 5px;
@@ -20,14 +21,15 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             overflow: hidden;
+            display: none; /* Initially hide all project sections */
         }
         .more-text-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease;
+            transition: max-height 2s ease;
         }
         .expanded .more-text-content {
-            max-height: 1000px; /* Large enough value to show content */
+            max-height: 1000px;
         }
         .toggle-button {
             display: inline-block;
@@ -39,7 +41,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.5s ease;
         }
         .toggle-button:hover {
             background-color: #555;
@@ -51,11 +53,9 @@
             text-align: left;
             font-size: 15px;
         }
-        /* Tag styles */
         .tags {
             margin-bottom: 10px;
         }
-        
         .tag {
             display: inline-block;
             padding: 5px 10px;
@@ -64,8 +64,68 @@
             font-size: 12px;
             font-family: Arial, sans-serif;
         }
+        .container {
+            overflow: hidden;
+        }
+        .show {
+            display: block !important;
+        }
+        .btn {
+            border: black;
+            outline: none;
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #ddd;
+        }
+        .btn.active {
+            background-color: #666;
+            color: white;
+        }
     </style>
-     <script>
+    <script>
+function refreshAndShowAll() {
+    // Set the active class on the "Show all" button before refresh
+    var showAllBtn = document.getElementById("showAllBtn");
+    showAllBtn.classList.add("active");
+
+    // Store the active state in local storage
+    localStorage.setItem("activeButton", "showAll");
+
+    // Refresh the page
+    location.reload();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    filterSelection("all");
+
+    // Check if "Show all" button should be active after page reload
+    if (localStorage.getItem("activeButton") === "showAll") {
+        document.getElementById("showAllBtn").classList.add("active");
+        localStorage.removeItem("activeButton"); // Clear the stored value
+    }
+
+    var btnContainer = document.getElementById("myTagContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            // Remove "active" class from all buttons
+            var current = document.getElementsByClassName("btn active");
+            while (current.length > 0) {
+                current[0].classList.remove("active");
+            }
+
+            // Add "active" class to the clicked button
+            this.classList.add("active");
+
+            // Call filterSelection with the button's text content
+            filterSelection(this.textContent.toLowerCase());
+        });
+    }
+});
+
+
         function toggleContent(button) {
             var textContent = button.parentElement;
             textContent.classList.toggle("expanded");
@@ -75,6 +135,52 @@
                 button.textContent = "Read more";
             }
         }
+
+        function filterSelection(c) {
+            var x, i, projects, tags, tagElements, j, t;
+            projects = document.getElementsByClassName("project-section");
+            if (c == "all") {t = true;} else {t = false;}
+            for (i = 0; i < projects.length; i++) {
+                w3RemoveClass(projects[i], "show");
+                tags = projects[i].getElementsByClassName("tag");
+                for (j = 0; j < tags.length; j++) {
+                    if (t == false) {
+                        if (tags[j].className.indexOf(c) > -1) {
+                        w3AddClass(projects[i], "show");
+                        break;
+                        }
+                        
+                    }else{
+                        w3AddClass(projects[i], "show");
+                        break;
+                    }
+
+                }
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
     </script>
 </head>
 <body>
@@ -82,42 +188,57 @@
         <h1>Jack Millar</h1>
         <nav>
             <a href="https://jackomillar.github.io/index.html">Home</a>
-            <a href="https://jackomillar.github.io/portfolio.html"  class="active">Portfolio</a>
+            <a href="https://jackomillar.github.io/portfolio.html" class="active">Portfolio</a>
             <a href="https://jackomillar.github.io/careers.html">Past Careers</a>
             <a href="https://jackomillar.github.io/contact.html">Contact</a>
         </nav>
     </div>
 
-    <div class="project-section">
+    <div id="myTagContainer">
+        <button id="showAllBtn" class="btn all" onclick="refreshAndShowAll()"> Show all</button>
+        <br>
+        <button class="btn html" onclick="filterSelection('html')"> HTML</button>
+        <button class="btn css" onclick="filterSelection('css')"> CSS</button>
+        <button class="btn javascript" onclick="filterSelection('javascript')"> Javascript</button>
+        <br>
+        <button class="btn java" onclick="filterSelection('java')"> Java</button>
+        <button class="btn lua" onclick="filterSelection('lua')"> Lua</button>
+        <button class="btn mysql " onclick="filterSelection('mysql')"> MySQL</button>
+        <br>
+        <button class="btn collaboration" onclick="filterSelection('collaboration')"> Collaboration</button>
+        <button class="btn dockerfile" onclick="filterSelection('dockerfile')"> Dockerfile</button>
+    </div> 
+
+    <div class="project-section show">
         <div class="tags">
-            <span class="tag" style="background-color: #8B0000; color: #ffffff;">HTML</span>
-            <span class="tag" style="background-color: #00FF00; color: black;">CSS</span>
-            <span class="tag" style="background-color: #FAC286; color: black;">Javascript</span>
+            <span class="tag html">HTML</span>
+            <span class="tag css">CSS</span>
+            <span class="tag javascript">Javascript</span>
         </div>
 
         <div class="text-content">
-            <h3 class="no-wrap" style ="text-align: left;">Personal Website</h3>
+            <h3 class="no-wrap" style="text-align: left;">Personal Website</h3>
             <p><a href="https://github.com/JackoMillar/JackoMillar.github.io">Repository</a></p>
-            <p>This website that you are currently viewing has helped Jack refresh his knowledge on web development as well as serve as a CV/Resume. The website is a ongoing project which will be updated as Jack acquires new skills. Feedback can be given through my email.</p>
+            <p>This website that you are currently viewing has helped Jack refresh his knowledge on web development as well as serve as a CV/Resume. The website is an ongoing project which will be updated as Jack acquires new skills. Feedback can be given through my email.</p>
         </div>
     </div>
 
     <div class="project-section">
         <div class="tags">
-            <span class="tag" style="background-color: #5382a1; color: #ffffff;">Java</span>
-            <span class="tag" style="background-color: #F29111; color: #ffffff;">MySQL</span>
-            <span class="tag" style="background-color: #384d54; color: #ffffff;">Dockerfile</span>
-            <span class="tag" style="background-color: #91d897; color: black;">Collaboration</span>
+            <span class="tag java">Java</span>
+            <span class="tag mysql">MySQL</span>
+            <span class="tag dockerfile">Dockerfile</span>
+            <span class="tag collaboration">Collaboration</span>
         </div>
 
         <img src="image/SEM-Contributors.png" alt="SEM contributors image" class="image-wrapper" style="width: 175px; height: 100px;">
         <div class="text-content">
-            <h3 class="no-wrap" style ="text-align: left;">SEM Group Project</h3>
+            <h3 class="no-wrap" style="text-align: left;">SEM Group Project</h3>
             <p><a href="https://github.com/meglou752/SEM-Group-Project/tree/master">Repository</a></p>
             <br>
             <p>Jack Millar worked in a Scrum team to generate reports on population information. He worked on designing and implementing a new system to allow easy access to the database as well as generating 32 reports for the Client.</p>
             <div class="more-text-content">
-                <p>As Part of this project, Jack was tasked with generating 8 reports with their respective test cases, developing the pom and dockerfile for easier compiling and execution of the code, and writing down the Code of Conduct for the team. Jack also helped bug fix and peer check others code as well as be available ready to help</p>
+                <p>As part of this project, Jack was tasked with generating 8 reports with their respective test cases, developing the pom and dockerfile for easier compiling and execution of the code, and writing down the Code of Conduct for the team. Jack also helped bug fix and peer check others' code as well as be available ready to help.</p>
             </div>
             <button class="toggle-button" onclick="toggleContent(this)">Read more</button>
         </div>
@@ -125,33 +246,32 @@
 
     <div class="project-section">
         <div class="tags">
-            <span class="tag" style="background-color: #5382a1; color: #ffffff;">Java</span>
-            <span class="tag" style="background-color: #91d897; color: black;">Collaboration</span>
+            <span class="tag java">Java</span>
+            <span class="tag collaboration">Collaboration</span>
         </div>
 
         <img src="image/Group-Project.png" alt="First page of Powerpoint" class="image-wrapper" style="width: 350px; height: 200px;">
         <div class="text-content">
-            <h3 class="no-wrap" style ="text-align: left;">Virtual Tour App</h3>
-            <p><a href="image/VirtualTourApplication.pptx" >Download Powerpoint</a></p>
+            <h3 class="no-wrap" style="text-align: left;">Virtual Tour App</h3>
+            <p><a href="image/VirtualTourApplication.pptx">Download Powerpoint</a></p>
             <br>
-            <p>Jack Millar led a team in designing and partially implementing a Application to give Virtual Tours of Edinburgh Museum. Through onsite visits, constructed persona's as well as usage scenarios, Jack's team was able to confidently give their pitch for this application</p>
+            <p>Jack Millar led a team in designing and partially implementing an application to give virtual tours of Edinburgh Museum. Through onsite visits, constructed personas as well as usage scenarios, Jack's team was able to confidently give their pitch for this application.</p>
         </div>
     </div>
 
     <div class="project-section">
-
         <div class="tags">
-            <span class="tag" style="background-color: #0056b3; color: white;">Lua</span>
+            <span class="tag lua">Lua</span>
         </div>
 
         <img src="image/warzonelogo.png" alt="Warzone.com logo" class="image-wrapper" style="width: 300px; height: 180px;">
         <div class="text-content">
-            <h3 class="no-wrap" style ="text-align: left;">Mod Developer</h3>
-            <p><a href="https://github.com/JackoMillar/Warzone-Lua" >Repository</a></p>
+            <h3 class="no-wrap" style="text-align: left;">Mod Developer</h3>
+            <p><a href="https://github.com/JackoMillar/Warzone-Lua">Repository</a></p>
             <br>
             <p>Outside of school, Jack actively engaged in designing and developing various projects for the indie game Warzone.com (not to be confused with COD: Warzone). Over two years, he released 15 mods to the public, each contributing to his proficiency in Lua and laying a strong foundation for future endeavors.</p>
             <div class="more-text-content">
-                <p>In addition to his role as a mod developer, Jack serves as the Main Moderator for the game's Modding Discord Server. Well-regarded within the community, he is frequently available to support and mentor newcomers in the modding space.</p>
+                <p>In addition to his role as a mod developer, Jack serves as the main moderator for the game's modding Discord server. Well-regarded within the community, he is frequently available to support and mentor newcomers in the modding space.</p>
             </div>
             <button class="toggle-button" onclick="toggleContent(this)">Read more</button>
         </div>
