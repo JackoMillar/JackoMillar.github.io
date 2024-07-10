@@ -1,13 +1,18 @@
-/* Reset and defaults */
+
 body {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    margin: 4%;
+    background-color: rgb(102,178,178); /* Background color for the entire page */
     padding: 20px;
-    border-spacing: 5px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    margin: 0;
+}
+
+/* Reset and defaults */
+.content-wrapper {
+    background-color: #fff; /* Content background color */
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
 }
 
 p {
