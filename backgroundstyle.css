@@ -12,7 +12,7 @@ body {
 
 p {
     text-align: left;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 /* Heading and navigation */
@@ -67,16 +67,16 @@ nav a:hover, .active {
 }
 
 h1 {
-    font-size: 26px;
+    font-size: 350%;
     line-height: 1.2em;
     font-style: normal;
     font-weight: 400;
-    padding-top: 3%;
+    padding-top: 2%;
     letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 35px;
     font-family: Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -87,7 +87,7 @@ h2 {
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 32px;
     font-family: Georgia, serif;
     display: grid;
     align-items: center;
@@ -133,38 +133,4 @@ h3 {
 
 .social-links:hover a:not(:hover) {
     filter: grayscale(100%);
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    body {
-        margin: 2%;
-        padding: 10px;
-    }
-
-    .heading {
-        padding-top: 5%;
-    }
-
-    .text-content {
-        font-size: 14px;
-    }
-
-    .image-wrapper img {
-        width: 100%;
-        height: auto;
-    }
-
-    .social-links a {
-        width: 30px;
-        height: 30px;
-    }
-
-    .btn {
-        padding: 8px 12px;
-    }
-
-    .tagContainer {
-        padding: 8px;
-    }
 }
