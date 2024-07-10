@@ -1,4 +1,4 @@
-/* Default style */
+/* Reset and defaults */
 body {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
@@ -10,11 +10,16 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* includes the heading text and navigation bar */
+p {
+    text-align: left;
+    font-size: 15px;
+}
+
+/* Heading and navigation */
 .heading {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; /* Center the heading */
+    margin: 0 auto;
     padding-top: 3%;
     text-transform: uppercase;
     font-family: Arial, sans-serif;
@@ -22,21 +27,22 @@ body {
     text-align: center;
 }
 
-/* navigation bar styling */
 nav {
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: center; /* Center the nav items */
+    justify-content: center;
     align-items: center;
     gap: 20px;
 }
+
 nav:before, nav:after {
     content: "";
     flex: 1 1;
     border-bottom: 2px solid #ddd;
     margin: 7.5px 0px;
 }
+
 nav a {
     margin: 0 10px;
     text-decoration: none;
@@ -45,13 +51,14 @@ nav a {
     font-weight: normal;
     font-size: 22px;
 }
+
 nav a:hover, .active {
     color: black;
     border-bottom: 1px solid #9ba0a9;
     padding-bottom: 3px;
 }
 
-/* main body of webpage after heading */
+/* Main content styling */
 .contents {
     padding-top: 5%;
     text-align: left;
@@ -59,7 +66,6 @@ nav a:hover, .active {
     letter-spacing: 1px;
 }
 
-/* font style for header text */
 h1 {
     font-size: 26px;
     line-height: 1.2em;
@@ -67,9 +73,8 @@ h1 {
     font-weight: 400;
     padding-top: 3%;
     letter-spacing: 1px;
-} 
+}
 
-/* font style for sub-header text */
 h2 {
     font-size: 22px;
     font-family: Arial, sans-serif;
@@ -81,7 +86,6 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* font style for main body of text */
 h3 {
     font-size: 20px;
     font-family: Georgia, serif;
@@ -91,6 +95,7 @@ h3 {
     column-gap: 5px;
     letter-spacing: 1px;
 }
+
 .text-content {
     font-size: 15px;
     line-height: 1.8em;
@@ -98,7 +103,7 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* web links with interactive icons */
+/* Social links */
 .social-links {
     display: flex;
     justify-content: flex-end;
@@ -107,6 +112,7 @@ h3 {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
+
 .social-links a {
     display: flex;
     align-items: center;
@@ -120,9 +126,45 @@ h3 {
     font-size: 20px;
     transition: all 0.4s ease;
 }
+
 .social-links a:hover {
     background-color: #919191;
 }
+
 .social-links:hover a:not(:hover) {
     filter: grayscale(100%);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 2%;
+        padding: 10px;
+    }
+
+    .heading {
+        padding-top: 5%;
+    }
+
+    .text-content {
+        font-size: 14px;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        height: auto;
+    }
+
+    .social-links a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+    }
+
+    .tagContainer {
+        padding: 8px;
+    }
 }

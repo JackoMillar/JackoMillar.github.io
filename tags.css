@@ -1,3 +1,15 @@
+.tags {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;     
+}
+
 .all {
     background-color: black;
     color:#ffffff;
@@ -45,29 +57,42 @@
 
 .container {
     overflow: hidden;
-  }
+}
   
   /* The "show" class is added to the filtered elements */
   .show {
-    display: block;
-  }
+    display: block !important;
+}
   
-  /* Style the buttons */
-  .btn {
-    border:  black;
-    outline: none;
+/* Tag container */
+.tagContainer {
+    text-align: center;
+    display: inline-block;
+    border-radius: 5%;
+    padding: 10px 20px;
+    border-spacing: 5px;
+    border: 5px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+.btn {
+    border: 1.5px solid black;
     padding: 10px 16px;
     cursor: pointer;
-  }
-  
-  /* Add a light grey background on mouse-over */
-  .btn:hover {
+    width: 90px;
+    height: 40px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    transition: background-color 0.4s ease;
+}
+
+.btn:hover {
     background-color: #ddd;
-  }
-  
-  /* Add a dark background to the active button */
-  .btn.active {
+}
+
+.btn.active {
     background-color: #666;
     color: white;
-  }
-  
+}
