@@ -58,6 +58,16 @@
     color: white;
 }
 
+.csharp {
+    background-color: #a179dc;
+    color: #ffffff;
+}
+
+.xaml {
+    background-color: #66afee;
+    color: black;
+}
+
 .container {
     overflow: hidden;
 }
