@@ -3,6 +3,7 @@ body {
     background-color: #66B2B2; /* Background color for the entire page */
     padding: 20px;
     margin: 0;
+    text-align: center;
 }
 
 /* Reset and defaults */

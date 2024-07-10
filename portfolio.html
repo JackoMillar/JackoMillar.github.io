@@ -70,17 +70,19 @@
         </nav>
     </div>
 
-    <div id="myTagContainer" class="tagContainer">
-        <p style="text-align: center;">Click on the buttons below to filter the projects by their respective tags.</p>
-        <button id="showAllBtn" class="btn all" onclick="refreshAndShowAll()"> Show all</button>
-        <br>
-        <button class="btn html" onclick="filterSelection('html')"> HTML</button>
-        <button class="btn css" onclick="filterSelection('css')"> CSS</button>
-        <button class="btn javascript" onclick="filterSelection('javascript')"> JavaScript</button>
-        <br>
-        <button class="btn java" onclick="filterSelection('java')"> Java</button>
-        <button class="btn lua" onclick="filterSelection('lua')"> Lua</button>
-        <button class="btn mysql " onclick="filterSelection('mysql')"> MySQL</button>
+    <div class="tagContainer-wrapper">
+        <div id="myTagContainer" class="tagContainer">
+            <p style="text-align: center;">Click on the buttons below to filter the projects by their respective tags.</p>
+            <button id="showAllBtn" class="btn all" onclick="refreshAndShowAll()"> Show all</button>
+            <br>
+            <button class="btn html" onclick="filterSelection('html')"> HTML</button>
+            <button class="btn css" onclick="filterSelection('css')"> CSS</button>
+            <button class="btn javascript" onclick="filterSelection('javascript')"> JavaScript</button>
+            <br>
+            <button class="btn java" onclick="filterSelection('java')"> Java</button>
+            <button class="btn lua" onclick="filterSelection('lua')"> Lua</button>
+            <button class="btn mysql " onclick="filterSelection('mysql')"> MySQL</button>
+        </div> 
     </div> 
 
     <div class="project-section show">
