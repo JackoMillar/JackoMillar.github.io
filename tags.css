@@ -73,6 +73,21 @@
     color: black;
 }
 
+.c {
+    background-color: #2270e6;
+    color: white;
+}
+
+.bash {
+    background-color: #D3D3D3;
+    color: black;
+}
+
+.json {
+    background-color: rgb(219, 96, 96);
+    color: white;
+}
+
 .xaml {
     background-color: #66afee;
     color: black;
